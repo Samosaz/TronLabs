@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -48,7 +52,7 @@
 
   @media (max-width: 800px) {
     .navbar {
-      display: absolute;
+      display: flex;
       align-items: center;
       background-color: #3683d0;
       position: fixed;
@@ -62,18 +66,17 @@
       border-bottom-right-radius: 0;
       border-bottom-left-radius: 0;
       border-top-left-radius: 0;
-      overflow-x: auto; /* Enable horizontal scroll for links */
     }
   
     .logo {
-      flex: 1;
+      flex-grow: 1;
       padding: 0 20px; /* Add padding to the logo */
     }
   
     .logo a {
       color: white;
       text-decoration: none;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
       cursor: default;
     }
@@ -81,11 +84,10 @@
     .nav-links {
       display: flex;
       text-align: right;
-      width: 60%; /* Occupy 70% of the available space */
-      white-space: nowrap; /* Prevent line breaks */
+      flex-grow: 1;
+      width: flex; /* Occupy 70% of the available space */
       justify-content: flex-end;
-      padding-right: 10px;
-      overflow-x: auto; /* Enable horizontal scroll for links */
+      margin-right: 10px;
     }
   
     .nav-links a {
@@ -99,7 +101,7 @@
     }
 
     .nav-links a:last-child {
-        margin-left: 5px; /* Reduce the margin for the last link */
+        margin-left: 10px; /* Reduce the margin for the last link */
       }
   
     .nav-links a:hover {
