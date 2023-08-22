@@ -4,6 +4,8 @@
     justify-content: space-between;
     background-color: #3683d0;
     color: white;
+    position: sticky;
+    top: 20px;
     padding: 10px 20px;
     cursor: pointer;
     width: 700px;
@@ -31,10 +33,10 @@
   .nav-links a {
     color: white;
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 15px;
     cursor: pointer;
     position: relative; /* Required for positioning the pseudo-element */
-    padding: 5px 15px; /* Add padding to create space around the oval */
+    padding: 7px 15px; /* Add padding to create space around the oval */
     border-radius: 30px;
     transition: background-color 0.3s; /* Add smooth transition for background color */
   }
@@ -46,11 +48,13 @@
 
   @media (max-width: 800px) {
     .navbar {
-      display: flex;
+      display: absolute;
       align-items: center;
       background-color: #3683d0;
+      position: fixed;
       color: white;
       cursor: default;
+      top: 0;
       margin: 0; /* Remove all margins */
       padding: 10px 0; /* Adjust padding for better spacing */
       width: 100%; /* Take up the whole width of the screen */

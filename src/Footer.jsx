@@ -5,9 +5,11 @@ import './Footer.css'; // Import your CSS file for styling
 const Footer = () => {
   return (
     <footer className="footer">
-      <p className='foot'>
-        {"Made with <3 in Canada"}
-      </p>
+      <div>
+        <p className='foot'>
+          {"Made with <3 in Canada"}
+        </p>
+      </div>
     </footer>
   );
 };
