@@ -1,0 +1,99 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #3683d0;
+    color: white;
+    padding: 10px 20px;
+    cursor: default;
+    width: 500px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-top: 20px;
+  }
+  
+  .logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    cursor: pointer;
+    position: relative; /* Required for positioning the pseudo-element */
+    padding: 5px 15px; /* Add padding to create space around the oval */
+    border-radius: 30px;
+    transition: background-color 0.3s; /* Add smooth transition for background color */
+  }
+  
+  .nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Oval background color with transparency */
+  }
+
+  @media (max-width: 600px) {
+    .navbar {
+      display: flex;
+      align-items: center;
+      background-color: #3683d0;
+      color: white;
+      cursor: default;
+      margin: 0; /* Remove all margins */
+      padding: 10px 0; /* Adjust padding for better spacing */
+      width: 100%; /* Take up the whole width of the screen */
+      border-top-right-radius: 0; /* Remove the border radius */
+      border-bottom-right-radius: 0;
+      overflow-x: auto; /* Enable horizontal scroll for links */
+    }
+  
+    .logo {
+      flex: 1;
+      padding: 0 20px; /* Add padding to the logo */
+    }
+  
+    .logo a {
+      color: white;
+      text-decoration: none;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: default;
+    }
+  
+    .nav-links {
+      display: flex;
+      text-align: right;
+      width: 60%; /* Occupy 70% of the available space */
+      white-space: nowrap; /* Prevent line breaks */
+      justify-content: flex-end;
+      padding-right: 10px;
+      overflow-x: auto; /* Enable horizontal scroll for links */
+    }
+  
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      cursor: pointer;
+      padding: 10px 20px;
+      background-color: rgba(255, 255, 255, 0);
+      transition: background-color 0.3s;
+    }
+
+    .nav-links a:last-child {
+        margin-left: 5px; /* Reduce the margin for the last link */
+      }
+  
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+  
