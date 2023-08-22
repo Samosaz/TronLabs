@@ -7,4 +7,9 @@
     height: 100%;
     background-color: #eadfe9; /* Change to your desired background color */
     z-index: -1; /* Place the background behind everything */
+
+    @media (max-width: 1000px) {
+      .background {
+          display: none; /* Hide the background on mobile devices */
+      }
   }

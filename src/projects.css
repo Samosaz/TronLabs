@@ -33,7 +33,7 @@
     color: #eadfe9;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     .projects-section {
         margin-left: auto;
         margin-right: auto;
