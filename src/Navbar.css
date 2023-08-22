@@ -40,7 +40,8 @@
   }
   
   .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Oval background color with transparency */
+    background-color: rgba(255, 255, 255, 0.877); /* Oval background color with transparency */
+    color: #3683d0;
   }
 
   @media (max-width: 800px) {
@@ -98,7 +99,8 @@
       }
   
     .nav-links a:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.877); /* Oval background color with transparency */
+      color: #3683d0;
     }
   }
   
