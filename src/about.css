@@ -32,7 +32,7 @@
     color: #eadfe9;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .about-section {
         margin-left: none;
         margin-right: none;
