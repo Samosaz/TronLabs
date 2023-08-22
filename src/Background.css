@@ -1,4 +1,7 @@
 /* Background.css */
+body {
+    overflow-x: hidden;
+  }
 .background {
     position: fixed;
     top: 0;

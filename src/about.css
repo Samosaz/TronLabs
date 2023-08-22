@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .about-section {
     padding: 20px 0;
     background-color: #7cc9b4;
