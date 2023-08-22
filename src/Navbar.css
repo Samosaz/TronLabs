@@ -60,7 +60,7 @@ body {
       cursor: default;
       top: 0;
       margin: 0; /* Remove all margins */
-      padding: 10px 0; /* Adjust padding for better spacing */
+      padding: 10px; /* Adjust padding for better spacing */
       width: 100%; /* Take up the whole width of the screen */
       border-top-right-radius: 0; /* Remove the border radius */
       border-bottom-right-radius: 0;
@@ -83,11 +83,9 @@ body {
   
     .nav-links {
       display: flex;
-      text-align: right;
+      justify-content:space-evenly;
       flex-grow: 1;
       width: flex; /* Occupy 70% of the available space */
-      justify-content: flex-end;
-      margin-right: 10px;
     }
   
     .nav-links a {
