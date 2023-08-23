@@ -1,12 +1,14 @@
 /* Footer.css */
 
 .footer {
+  position: fixed;
+  font-weight: 700px;
   display: flex;
   flex-direction: column;
-  background-color: #3683d0;
+  background-color: #7930d8;
   padding: 20px;
   text-align: center;
-  color: #eadfe9;
+  color: #00f355;
   font-size: 14px;
   font-size: large;
   bottom: 0;
