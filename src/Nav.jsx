@@ -1,29 +1,21 @@
 import React from 'react';
 import './Navbar.css'; // Import your CSS file for styling
 
-const Navbar = () => {
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+const Navbar = ({ scrollToAbout, scrollToProjects }) => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <a href="/">Tron Labs</a>
+        <a className="glow" href="/" data-text="Tron Labs">
+          Tron Labs
+        </a>
       </div>
       <div className="nav-links">
-        <a onClick={scrollToAbout}>About</a>
-        <a onClick={scrollToProjects}>Projects</a>
+        <a onClick={scrollToAbout} data-text="About">
+          About
+        </a>
+        <a onClick={scrollToProjects} data-text="Projects">
+          Projects
+        </a>
       </div>
     </nav>
   );

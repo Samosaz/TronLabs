@@ -2,58 +2,110 @@ body {
   overflow-x: hidden;
 }
 
-.navbar {
+  .navbar {
     display: flex;
-    position:sticky;
+    position: sticky;
     align-items: center;
     justify-content: space-between;
-    background-color: #7930d8;
-    color: #389d5b;
-    top: 20px;
+    background-color: #000000c8;
+    color: #7DFDFE;
     padding: 10px 20px;
-    cursor: pointer;
-    width: 700px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    border: 2px solid #121212;
-    border-radius: 40px;
-    margin-top: 40px;
+    cursor: default;
+    width: 1000px;
+    height: 100px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+    border: 2px solid #d3d3d3;
+    border-radius: 80px;
+    margin-top: 400px;
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
   }
   
-  .logo a {
-    color: #00f355;
+  .logo {
+    display: flex;
+    width: 300px
+  }
+  .glow {
     text-decoration: none;
-    font-size: 24px;
+    color: #7DFDFE;
+    font-size: 45px;
     font-weight: bold;
+    margin-left: 10%;
+    position: relative; /* Add relative positioning to the parent element */
+  }
+  
+  .glow::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(125, 253, 254, 0.9); /* Slightly brighter glow */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .glow:hover::before {
+    opacity: 1;
+    animation: glow-animation 1.5s infinite;
+  }
+  
+  @keyframes glow-animation {
+    0%, 100% {
+      text-shadow: 0 0 10px rgba(125, 253, 254, 0.9); /* Slightly brighter glow */
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(125, 253, 254, 0.9); /* Slightly brighter glow */
+    }
   }
 
   .nav-links {
     display: flex;
+    margin-right: 2%;
   }
-
   
   .nav-links a {
-    color: #00f355;
     text-decoration: none;
+    font-size: 30px;
     font-weight: 700;
     margin-left: 15px;
     cursor: pointer;
     position: relative; /* Required for positioning the pseudo-element */
     padding: 7px 15px; /* Add padding to create space around the oval */
-    border-radius: 30px;
-    transition: background-color 0.3s; /* Add smooth transition for background color */
   }
   
-  .nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.877); /* Oval background color with transparency */
-    color: #7930d8;
+  .nav-links a::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(15%, 20%); 
+    color: transparent;
+    text-shadow: 0 0 10px rgba(125, 253, 254, 0.9); /* Slightly brighter glow */
+    opacity: 0;
+    transition: opacity 0.3s;
   }
+  
+  .nav-links a:hover::before {
+    opacity: 1;
+    animation: glow-animations 1.5s infinite;
+  }
+  
+  @keyframes glow-animations {
+    0%, 100% {
+      text-shadow: 0 0 10px rgba(125, 253, 254, 0.9); /* Slightly brighter glow */
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(125, 253, 254, 0.9); /* Slightly brighter glow */
+    }
+  }
+  
+  
 
   @media (max-width: 800px) {
     .navbar {
       display: flex;
-      position: sticky;
       align-items: center;
       background-color: #3683d0;
       color: white;
