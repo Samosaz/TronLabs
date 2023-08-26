@@ -9,32 +9,29 @@ import { Link, animateScroll as scroll, Events } from 'react-scroll';
 import rocket from './rocket.png';
 import Test from './Test'
 
+const useParallaxScroll = (parallaxRef) => {
+  const [scroll, setScroll] = React.useState(0);
+  React.useEffect(() => {
+    if (parallaxRef.current) {
+      parallaxRef.current.onScroll((state) => {
+        setScroll(state.current);
+      });
+    }
+  }, [parallaxRef]);
+  return scroll;
+};
+
 const App = () => {
-  const [rotation, setRotation] = useState(-180);
+  const parallaxRef = React.useRef();
+  const scrollValue = useParallaxScroll(parallaxRef);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const rotationValue = -180 + (window.scrollY / (window.innerHeight * 3) * 360);
-      setRotation(rotationValue);
-    };
-
-    Events.scrollEvent.register('scroll', handleScroll);
-    
-    return () => {
-      Events.scrollEvent.remove('scroll');
-    };
-  }, []);
-
+  // Calculate the rotation using the scroll value
+  const rotation = -180 + (scrollValue * 360);
   return (
     <div className="App">
-      <Test />
+      
       <Parallax pages={3} speed={1}>
-        <Navbar
-          scrollToAbout={() => scroll.scrollTo(window.innerHeight)}
-          scrollToProjects={() => scroll.scrollTo(2 * window.innerHeight)}
-        />
-        
-        <ParallaxLayer sticky={{ start: 0, end: 2 }}>
+      <ParallaxLayer sticky={{start: 0, end: 2}}>
           <img 
             src={rocket} 
             style={{
@@ -42,11 +39,14 @@ const App = () => {
               height: 'auto',
               position: 'sticky',
               right: '50px',
-              transform: `rotate(${rotation}deg)`,
-              zIndex: '10'
+              transform: `rotate(${rotation}deg)`
             }}
           />
         </ParallaxLayer>
+        <Navbar
+          scrollToAbout={() => scroll.scrollTo(window.innerHeight)}
+          scrollToProjects={() => scroll.scrollTo(2 * window.innerHeight)}
+        />
         <div className='background'>
           <ParallaxLayer offset={0}>
             <div className='moon'></div>
