@@ -9,68 +9,79 @@ body {
 }
 
 .space-layer {
-  background: linear-gradient(to bottom, #0a192f, #1c3058);
+  background: linear-gradient(to bottom, #04002b, #1c3058);
   width: 100%;
   height: 100%;
 }
 
 .sky-layer {
-  background: linear-gradient(to bottom, #1c3058, #4b6cb7);
+  background: linear-gradient(to bottom, #1c3058, #2b1053);
   width: 100%;
   height: 100%;
 }
 
 .mountain-layer {
-  background: linear-gradient(to bottom, #4b6cb7, #8090c7);
+  background: linear-gradient(to bottom, #330066, #311e65);
   width: 100%;
   height: 100%;
 }
 
+.moonmount {
+  background-image: url('./moonmount.jpg');
+  position: fixed;
+  width: 100%; /* Adjust size as needed */
+  height: 100%; /* Adjust size as needed */
+   /* Move the moon back by half its width */
+  z-index: 1; /* Make sure the moon is behind other content */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .moon {
   background-image: url('./moon.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  transform: translate(1300px, 10px);
+}
+
+
+.moonsurfContainer {
   position: absolute;
-  width: 40%; /* Adjust size as needed */
-  height: 40%; /* Adjust size as needed */
-  top: 50px; /* Adjust position as needed */
-  transform: translate(195%, 0%); /* Move the moon back by half its width */
-  z-index: 3; /* Make sure the moon is behind other content */
+  top: 0;
+  left: 0;
+  width: 2000px;
+  height: 1000px; /* Adjust the height as needed */
+  z-index: 2; /* Make sure it's in front of the backgrounds */
+  display: flex;
+  justify-content: center;
+}
+
+.moonsurf {
+  background-image: url('./moonsurf.png');
   background-size: contain;
+  width: 2000px;
+  height: 1000px;
+  transform: rotate(180deg) translateY(650px);
   background-repeat: no-repeat;
 }
 
-.clouds {
-  background-image: url('./cloud1.png');
-  background-color: #1e529f;
-  position: absolute;
-  width: 100%; /* Adjust size as needed */
-  height: auto; /* Adjust size as needed */
-  z-index: 2; /* Make sure the moon is behind other content */
-  background-size:unset;
-  background-repeat: no-repeat;
+.img {
+  transform-origin: center center;
 }
 
-.cloudz {
-  background-image: url('./cloud2.png');
-  position: relative;
-  background-color: aqua;
-  width: 100%; /* Adjust size as needed */
-  height: auto; /* Adjust size as needed */
-  top: 50px; /* Adjust position as needed */
-  left: 50px; /* Adjust position as needed */
-  z-index: 1; /* Make sure the moon is behind other content */
-  background-size:auto;
-  background-repeat: no-repeat;
+/*.rocketContainer {
+  position: sticky;
+  display: flex;
+  height: 500px;
+  width: 500px;
 }
 
-.stars {
-  background-image: url('./stars1.png');
-  position: relative;
-  background-color: aqua;
-  width: 100%; /* Adjust size as needed */
-  height: auto; /* Adjust size as needed */
-  top: 50px; /* Adjust position as needed */
-  left: 50px; /* Adjust position as needed */
-  z-index: 1; /* Make sure the moon is behind other content */
-  background-size:cover;
+.rocket {
+  background-image :url('./rocket.png');
+  height: 80%;
+  width: 80%;
+  z-index: 2;
+  transform: rotate(180deg) translateX(-1000px);
   background-repeat: no-repeat;
-}
+}*/
