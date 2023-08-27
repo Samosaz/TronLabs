@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.7c031e77.css",
-    "main.js": "./static/js/main.e4295ae9.js",
+    "main.css": "./static/css/main.c84b7f00.css",
+    "main.js": "./static/js/main.027ad38b.js",
     "static/js/787.a268f32a.chunk.js": "./static/js/787.a268f32a.chunk.js",
     "static/media/moonmount.jpg": "./static/media/moonmount.b7a7fb3641438176bead.jpg",
     "static/media/moonsurf.png": "./static/media/moonsurf.d0ddabd5ad79cd610421.png",
     "static/media/rocket.png": "./static/media/rocket.e56f9bc26e8937f60071.png",
     "static/media/moon.png": "./static/media/moon.08cc53b0d9930906c4d7.png",
     "index.html": "./index.html",
-    "main.7c031e77.css.map": "./static/css/main.7c031e77.css.map",
-    "main.e4295ae9.js.map": "./static/js/main.e4295ae9.js.map",
+    "main.c84b7f00.css.map": "./static/css/main.c84b7f00.css.map",
+    "main.027ad38b.js.map": "./static/js/main.027ad38b.js.map",
     "787.a268f32a.chunk.js.map": "./static/js/787.a268f32a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c031e77.css",
-    "static/js/main.e4295ae9.js"
+    "static/css/main.c84b7f00.css",
+    "static/js/main.027ad38b.js"
   ]
 }
