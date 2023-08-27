@@ -1,52 +1,50 @@
-import React, { useState, useRef, useEffect } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import Navbar from './Nav';
 import ProjectsSection from './ProjectsSection';
 import AboutSection from './AboutSection';
 import './App.css';
+import { useSpring, animated } from '@react-spring/web';
 import Footer from './Footer';
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import { Link, animateScroll as scroll, Events } from 'react-scroll';
 import rocket from './rocket.png';
-import Test from './Test'
-
-const useParallaxScroll = (parallaxRef) => {
-  const [scroll, setScroll] = React.useState(0);
-  React.useEffect(() => {
-    if (parallaxRef.current) {
-      parallaxRef.current.onScroll((state) => {
-        setScroll(state.current);
-      });
-    }
-  }, [parallaxRef]);
-  return scroll;
-};
 
 const App = () => {
-  const parallaxRef = React.useRef();
-  const scrollValue = useParallaxScroll(parallaxRef);
+  const [offsetY, setOffsetY] = useState(0);
+  const specificPage = 1; // Adjust this value to the page you want to trigger the rotation
+  const { rotation } = useSpring({
+    rotation: offsetY >= specificPage ? 0 : 180
+  });
 
-  // Calculate the rotation using the scroll value
-  const rotation = -180 + (scrollValue * 360);
+  const handleScroll = (state) => {
+    setOffsetY(state.scroll);
+  };
+
   return (
     <div className="App">
-      
-      <Parallax pages={3} speed={1}>
-      <ParallaxLayer sticky={{start: 0, end: 2}}>
-          <img 
-            src={rocket} 
+      <Parallax pages={3} speed={1} onScroll={handleScroll}>
+
+        {/*<ParallaxLayer z={1} sticky={{ start: 0, end: 2 }}>
+          <animated.div 
             style={{
-              width: '200px', 
-              height: 'auto',
               position: 'sticky',
-              right: '50px',
-              transform: `rotate(${rotation}deg)`
-            }}
-          />
-        </ParallaxLayer>
-        <Navbar
-          scrollToAbout={() => scroll.scrollTo(window.innerHeight)}
-          scrollToProjects={() => scroll.scrollTo(2 * window.innerHeight)}
-        />
+              display: 'flex',
+            }}>
+            <img 
+              src={rocket} 
+              style={{
+                height: '300px', 
+                width: 'auto',
+                transform: rotation.to(r => `rotate(${r}deg)`),
+                transformOrigin: 'center center',
+                marginTop: '200px',
+                marginLeft: '500px',
+                zIndex: '2'
+              }} 
+            />
+          </animated.div>
+            </ParallaxLayer>*/}
+
         <div className='background'>
           <ParallaxLayer offset={0}>
             <div className='moon'></div>
@@ -61,6 +59,15 @@ const App = () => {
             <div className="space-layer" />
           </ParallaxLayer>
         </div>
+
+        {/* Navbar with a higher z-index */}
+        <ParallaxLayer z={3}>
+          <Navbar
+            scrollToAbout={() => window.scroll(window.innerHeight)}
+            scrollToProjects={() => window.scroll(2 * window.innerHeight)}
+          />
+        </ParallaxLayer>
+
         <div className='foreground'>
           <ParallaxLayer offset={0} speed={0}>
             <div className="moonsurfContainer">
@@ -74,11 +81,12 @@ const App = () => {
             <div className='moon'></div>
           </ParallaxLayer>
         </div>
+
         <div className='content'>
-          <ParallaxLayer offset={1} factor={1} speed={0.8}>
+          <ParallaxLayer z={2} offset={1} factor={1} speed={0.8}>
             <AboutSection />
           </ParallaxLayer>
-          <ParallaxLayer offset={2} factor={1} speed={0.7}>
+          <ParallaxLayer z={2} offset={2} factor={1} speed={0.7}>
             <ProjectsSection />
           </ParallaxLayer>
           <ParallaxLayer offset={2} speed={0.5}>
@@ -87,7 +95,9 @@ const App = () => {
         </div>
       </Parallax>
     </div>
-  );
+);
 }
 
 export default App;
+
+
